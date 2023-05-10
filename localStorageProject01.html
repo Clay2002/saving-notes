@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+</head>
+<body>
+
+
+    <header >My Notes!</header>
+
+
+
+
+</body>
+</html>
+
+<div id="container-1">
+
+<input type = "text" placeholder = "Write Notes Here:" id = "userInput">
+
+</div>
+<div id = "container-2"><button onclick = "submit()"id = "button">Save</button></div>
+
+
+
+
+<div id = "container-3"><button onclick = "reset()"id = "button2">Reset</button></div>
+
+
+<p id = "display"></p>
+
+
+
+
+<script>
+
+   var notes = document.getElementById("container-1");
+
+   var input = document.getElementById("userInput");
+
+   var button = document.getElementById("button");
+
+   
+
+
+   var keep = document.getElementById("display").innerHTML = localStorage.getItem("userInput");
+
+   function submit(){
+
+   var userInput = document.getElementById("userInput").value
+    
+    inputData = localStorage.setItem("UserNotes", userInput)
+
+
+
+    var display = document.getElementById("display").innerText = userInput;
+
+    
+  
+
+   }
+
+  
+   var keep = document.getElementById("display").innerHTML = localStorage.getItem("UserNotes");
+
+function reset(){
+
+
+document.getElementById("display").innerHTML = "";
+localStorage.removeItem("UserNotes");
+
+
+
+}
+
+
+</script>
+
+
+
+<style>
+
+header {
+
+text-align: center;
+font-size: 50px;
+
+}
+
+body{
+    background-color: rgb(98, 143, 143);
+}
+
+#container-1{
+
+    padding-top: 50px;
+    text-align: center;
+}
+
+#userInput{
+   
+    padding-bottom: 100px;
+    width: 400px;
+    border: solid black 3px;
+
+
+}
+#container-2, #container-3 {
+    margin-top: 50px;
+    text-align: center;
+
+}
+
+#display{
+
+
+    
+    padding-right: 200px;
+    padding-left: 200px;
+    font-size: 30px;
+
+
+
+}
+
+
+
+</style>
